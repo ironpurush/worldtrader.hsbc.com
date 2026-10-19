@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorldTrader — Local Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #292929;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #fff;
+      padding: 20px 7%;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .brand {
+      color: #db0011;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .brand small {
+      display: block;
+      color: #333;
+      font-size: 13px;
+      margin-top: 5px;
+      font-weight: 400;
+    }
+
+    main {
+      max-width: 440px;
+      margin: 65px auto;
+      padding: 32px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      box-shadow: 0 4px 18px #0000000a;
+    }
+
+    .notice {
+      background: #fff4f4;
+      border-left: 4px solid #db0011;
+      padding: 10px;
+      font-size: 12px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 25px;
+      margin: 0 0 10px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    label {
+      display: block;
+      margin: 22px 0 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #777;
+      border-radius: 2px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 14px;
+      border: 0;
+      background: #db0011;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #b8000e; }
+
+    .demo-result {
+      display: none;
+      color: #a00000;
+      font-size: 13px;
+      margin-top: 16px;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+      padding: 20px;
+    }
+
+    @media (max-width: 520px) {
+      main {
+        margin: 25px 16px;
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      WorldTrader
+      <small>LOCAL DEMONSTRATION PAGE</small>
+    </div>
+  </header>
+
+  <main>
+    <div class="notice">
+      DEMO ONLY — Not an official HSBC website.
+      Do not enter real account credentials.
+    </div>
+
+    <h1>Welcome</h1>
+    <p>Sample trading-platform login interface.</p>
+
+    <form id="demoForm">
+      <label for="username">Demo username</label>
+      <input id="username" name="username"
+        type="text" placeholder="Enter a test username"
+        autocomplete="off" required>
+
+      <label for="password">Demo password</label>
+      <input id="password" name="password"
+        type="password" placeholder="Enter a test password"
+        autocomplete="off" required>
+
+      <button type="submit">Demo sign in</button>
+      <div class="demo-result" id="result">
+        Demo only: authentication is not configured.
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    Independent local demo · Not affiliated with HSBC
+  </footer>
+
+  <script>
+    document.getElementById("demoForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        document.getElementById("result").style.display = "block";
+        this.reset();
+      });
+  </script>
+</body>
+</html>
