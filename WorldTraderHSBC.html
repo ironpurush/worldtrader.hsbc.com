@@ -145,9 +145,15 @@
 
       <button type="submit">Login</button>
       <div class="demo-result" id="result">
-        <script>alert("Demo only: Your credentials have been compromised.")</script>
+        Demo only: Your credentials have been compromised.
       </div>
     </form>
+    <script>
+document.getElementById("demoForm").addEventListener("submit", function(event) {
+   event.preventDefault();
+   alert("Your credentials have been breached!");
+});
+</script>
   </main>
 
   <footer>
